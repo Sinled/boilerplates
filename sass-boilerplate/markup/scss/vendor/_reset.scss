@@ -1,0 +1,78 @@
+/*------------------------------------*\
+  base Reset
+\*------------------------------------*/
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  color: $base-color;
+  font: $base-font;
+  background: $base-background;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: none;
+}
+
+textarea,
+input,
+input[type=text],
+input[type=password],
+input[type=file],
+input[type="image"] {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+img {
+  border-style: none;
+}
+
+a {
+  text-decoration: underline;
+  color: $base-link-color;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+}
+
+input,
+textarea,
+select {
+  font: 100% Arial, Helvetica, sans-serif;
+  vertical-align: middle;
+  color: #000;
+}
+
+form,
+fieldset {
+  margin: 0;
+  padding: 0;
+  border-style: none;
+}
+
+header,
+footer,
+article,
+section,
+hgroup,
+nav,
+figure {
+  display: block;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+button::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+[type="button"]::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
