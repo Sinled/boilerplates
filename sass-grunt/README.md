@@ -24,7 +24,7 @@ compass version 0.12.2
 
 	sudo gem install compass
 
-sass version 3.3.0alpha.141
+sass version 3.3.0alpha.141 for sourcemap support
 
 	sudo gem install sass -v 3.3.0.alpha.141 --pre
 
@@ -36,7 +36,7 @@ installation
 	bower install
 
 
-build forntend
+build frontend
 --------------
 
 
