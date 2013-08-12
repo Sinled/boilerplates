@@ -17,6 +17,11 @@ in directory width compass.rb run:
 
 	sass --compass --watch scss:css --style compressed
 
-compile with source maps (work in chrome 27)
+compile with source maps compressed (work in chrome 27)
 
 	sass --compass --sourcemap  --watch scss:css --style compressed
+
+
+force recompile with source maps (work in chrome 27)
+
+	sass --compass --sourcemap --update --force scss:css 

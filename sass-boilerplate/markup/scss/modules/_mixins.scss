@@ -79,17 +79,6 @@
 	@include hidpi($media) { @content; }
 }
 
-// set styles for animating fixed backgrounds
-@mixin background-animations($elem-name, $frames) {
-  $i: $frames;
-  @while $i > 0 {
-    .#{$elem-name}__text-frame--#{$i} {
-  		background-image: image-url("#{$elem-name}/frame-#{$i}.png");
-    }
-    $i: $i - 1;
-  }
-}
-
 // 
 // set-zindex
 //
@@ -140,3 +129,30 @@
   }
 }
 
+// zoom image mixin
+
+@mixin zoom-box($box-name: "visual-block", $img-w: 300px, $img-h: 250px, $hover-zoom: 20px) {
+  .#{$box-name} {
+    img {
+      @include transition-property(width, height, margin);
+      @include transition-duration(0.3s);
+
+      width: $img-w;
+      height: $img-h;
+    }
+  }
+
+  .#{$box-name}__vholder {
+    width: $img-w;
+    height: $img-h;
+    overflow: hidden;
+  }
+
+  .#{$box-name}:hover {
+    img {
+      width: $img-w + $hover-zoom * 2;
+      height: $img-h + $hover-zoom * 2;
+      margin: -$hover-zoom;
+    }
+  }
+}
