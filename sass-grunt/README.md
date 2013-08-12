@@ -34,3 +34,18 @@ installation
 
 	npm install
 	bower install
+
+
+build forntend
+--------------
+
+
+	grunt
+
+to run local server:
+
+	grunt server
+
+to run test
+
+	grunt test
