@@ -15,13 +15,13 @@ compile styles
 
 in directory width compass.rb run:
 
-	sass --compass --watch scss:css --style compressed
+	sass --compass --watch styles:css --style compressed
 
 compile with source maps compressed (work in chrome 27)
 
-	sass --compass --sourcemap  --watch scss:css --style compressed
+	sass --compass --sourcemap  --watch styles:css --style compressed
 
 
 force recompile with source maps (work in chrome 27)
 
-	sass --compass --sourcemap --update --force scss:css 
+	sass --compass --sourcemap --update --force styles:css 
