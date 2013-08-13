@@ -3,3 +3,4 @@ static
 .tmp
 .sass-cache
 src/bower_components
+dist
