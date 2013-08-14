@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd $(dirname "${0}")\
-    && sass --compass --sourcemap --update --force styles:css --style compressed
+    && sass --compass --update --force styles:css --style compressed\
     && echo DONE\
     && exit
 
