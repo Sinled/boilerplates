@@ -5,9 +5,9 @@ compass version 0.12.2
 
 	sudo gem install compass
 
-sass version 3.3.0alpha.141
+sass version 3.3.0alpha.141 for sourcemaps
 
-	gem install sass -v 3.3.0.alpha.141 --pre
+	sudo gem install sass -v 3.3.0.alpha.141 --pre
 
 
 compile styles
@@ -25,3 +25,9 @@ compile with source maps compressed (work in chrome 27)
 force recompile with source maps (work in chrome 27)
 
 	sass --compass --sourcemap --update --force styles:css 
+
+
+or use shell scripts
+	
+	./sass-watch.sh
+	./sass-force-build.sh
