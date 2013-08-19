@@ -39,13 +39,12 @@ installation
 build frontend
 --------------
 
-
 	grunt
 
-to run local server:
+
+
+to build with livereload:
+-------------------------
 
 	grunt server
 
-to run test
-
-	grunt test

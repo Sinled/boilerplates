@@ -33,7 +33,7 @@ $h4_margin: 1.33em 0 !default;
 $h5_margin: 1.67em 0 !default;
 $h6_margin: 2.33em 0 !default;    
 
-$background: #fff !default;    
+$base-background: #fff !default;    
 $color: #000 !default;    
 
 // =============================================================================
@@ -96,7 +96,7 @@ html {
         font-size: 100%; // 1
     }
 	
-    background: $background;
+    background: $base-background;
 	color: $color;
     -webkit-text-size-adjust: 100%; // 2
     -ms-text-size-adjust: 100%; // 2
