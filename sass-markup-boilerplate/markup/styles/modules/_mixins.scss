@@ -24,6 +24,22 @@
   }
 }
 
+%button {
+  @include inline-block(middle);
+  @include box-sizing(content-box);
+  position: relative;
+  overflow: visible;
+  margin: 0;
+  padding: 11px 10px 10px;
+  height: 18px;
+  border: 1px solid #ccc;
+  background: none;
+  color: $base-color;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
 %input-text {
 	overflow: hidden;
 

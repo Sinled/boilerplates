@@ -125,7 +125,6 @@ body {
 // 1. Addresses outline displayed oddly in Chrome
 // 2. Improves readability when focused and also mouse hovered in all browsers
 //    people.opera.com/patrickl/experiments/keyboard/test
-// 3. ie10 active bg
 
 a {
     text-decoration: underline;
@@ -142,12 +141,6 @@ a {
     &:hover,
     &:active {
         outline: 0;
-    }
-
-
-    // 3
-    &:active {
-      background-color: transparent;
     }
 }
 
