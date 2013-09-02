@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% block head %}
+  <meta charset="UTF-8">
+  {% block viewport %}{% endblock %}
+  <link rel="stylesheet" href="/static/styles/main.css">
+  <title>Project - {% block title %}{% endblock %}</title>
+  {% endblock %}
+</head>
+<body class=" {{ bodyclass }}">
+  <div class="wrapper">
+    {% block content %}{% endblock %}
+  </div>
+
+  <script type="text/javascript" src="/static/scripts/main.js"></script>
+
+  {% block additional_js %}
+  {% endblock %}
+
+  {% block extra_js %}
+  {% endblock %}
+
+  {# 
+    <script type="text/javascript" src="https://dl.dropboxusercontent.com/u/2321955/Minihosting/dist/html-inspector.js"></script>
+    <script> HTMLInspector.inspect() </script>
+  #}
+
+</body>
+</html>

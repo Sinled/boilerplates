@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block viewport %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+
+{% block title %}Index{% endblock %}
+{% set bodyclass %}index-page{% endset %}
+
+{% block content %}
+
+{% include "inc/_header.html" %}
+
+<div class="main">
+  <span class="icon icon--git">asdf</span>
+</div>
+
+{% include "inc/_footer.html" %}
+
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}
