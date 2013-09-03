@@ -2,6 +2,7 @@
 input
 .allow-devtools-edit
 tmp
+static
 npm-debug.log
 .sass-cache
 .DS_store
