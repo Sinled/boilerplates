@@ -2,3 +2,4 @@ npm-debug.log
 tmp
 .sass-cache
 *.map
+.DS_store
