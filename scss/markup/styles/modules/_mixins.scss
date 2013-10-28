@@ -1,43 +1,43 @@
 // custom font face mixin - fix ie9-10
 @mixin my-font-face($name, $font-files, $eot: false, $weight: false, $style: false) {
-  $iefont: unquote("#{$eot}?#iefix");
-  @font-face {
-    font-family: quote($name);
-    @if $eot {
-      src: font-url($eot);
-      $font-files: font-url($iefont) unquote("format('embedded-opentype')"), $font-files; }
-    src: $font-files;
-    @if $weight {
-      font-weight: $weight; }
-    @if $style {
-      font-style: $style; } } }
+	$iefont: unquote("#{$eot}?#iefix");
+	@font-face {
+		font-family: quote($name);
+		@if $eot {
+			src: font-url($eot);
+			$font-files: font-url($iefont) unquote("format('embedded-opentype')"), $font-files; }
+		src: $font-files;
+		@if $weight {
+			font-weight: $weight; }
+		@if $style {
+			font-style: $style; } } }
 
 %clearfix {
-  @if $legacy-support-for-ie {
-  	*zoom: 1;
-  }
-  
-  &:after {
-  	content: '';
-  	display:table;
-  	clear: both;
-  }
+	@if $legacy-support-for-ie {
+		*zoom: 1;
+	}
+	
+	&:after {
+		content: '';
+		display:table;
+		clear: both;
+	}
 }
 
 %button {
-  @include inline-block(middle);
-  @include box-sizing(content-box);
-  position: relative;
-  overflow: visible;
-  margin: 0;
-  padding: 11px 10px 10px;
-  height: 18px;
-  border: 1px solid #ccc;
-  background: none;
-  color: $base-color;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
+	@include inline-block(middle);
+	@include box-sizing(content-box);
+	position: relative;
+	overflow: visible;
+	margin: 0;
+	padding: 11px 10px 10px;
+	height: 18px;
+	border: 1px solid #ccc;
+	background: none;
+	color: $base-color;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
 }
 
 %input-text {
@@ -99,76 +99,110 @@
 // set-zindex
 //
 @mixin set-zindex($elem-name, $counter, $direction: "ascending", $startvalue: 0) {
-  $i: 0;
+	$i: 0;
 	$s: $startvalue;
 	$c: $counter;
 
-  @if $direction == "ascending" {
-  	@while $i < $c {
-  	  .#{$elem-name}--#{$i + 1} {
-  	  	z-index: $s + $i;
-  	  }
-  	  $i: $i + 1;
-  	}
-  } @else {
-  	@while $i < $c {
-  	  .#{$elem-name}--#{$i + 1} {
-  	  	z-index: $s - $i;
-  	  }
-  	  $i: $i + 1;
-  	}
-  }
+	@if $direction == "ascending" {
+		@while $i < $c {
+			.#{$elem-name}--#{$i + 1} {
+				z-index: $s + $i;
+			}
+			$i: $i + 1;
+		}
+	} @else {
+		@while $i < $c {
+			.#{$elem-name}--#{$i + 1} {
+				z-index: $s - $i;
+			}
+			$i: $i + 1;
+		}
+	}
 }
 
 // 
 // placeholder mixin
 //
 @mixin placeholder($params) {
-  &::-webkit-input-placeholder {
-     color: $params;
-  }
+	&::-webkit-input-placeholder {
+		 color: $params;
+	}
 
-  &:-moz-placeholder { /* Firefox 18- */
-     color: $params;  
-  }
+	&:-moz-placeholder { /* Firefox 18- */
+		 color: $params;  
+	}
 
-  &::-moz-placeholder {  /* Firefox 19+ */
-     color: $params;  
-  }
+	&::-moz-placeholder {  /* Firefox 19+ */
+		 color: $params;  
+	}
 
-  &:-ms-input-placeholder {  
-     color: $params;  
-  }
+	&:-ms-input-placeholder {  
+		 color: $params;  
+	}
 
-  &:placeholder {  
-     color: $params;  
-  }
+	&:placeholder {  
+		 color: $params;  
+	}
 }
 
 // zoom image mixin
 
 @mixin zoom-box($box-name: "visual-block", $img-w: 300px, $img-h: 250px, $hover-zoom: 20px) {
-  .#{$box-name} {
-    img {
-      @include transition-property(width, height, margin);
-      @include transition-duration(0.3s);
+	.#{$box-name} {
+		img {
+			@include transition-property(width, height, margin);
+			@include transition-duration(0.3s);
 
-      width: $img-w;
-      height: $img-h;
-    }
-  }
+			width: $img-w;
+			height: $img-h;
+		}
+	}
 
-  .#{$box-name}__vholder {
-    width: $img-w;
-    height: $img-h;
-    overflow: hidden;
-  }
+	.#{$box-name}__vholder {
+		width: $img-w;
+		height: $img-h;
+		overflow: hidden;
+	}
 
-  .#{$box-name}:hover {
-    img {
-      width: $img-w + $hover-zoom * 2;
-      height: $img-h + $hover-zoom * 2;
-      margin: -$hover-zoom;
-    }
-  }
+	.#{$box-name}:hover {
+		img {
+			width: $img-w + $hover-zoom * 2;
+			height: $img-h + $hover-zoom * 2;
+			margin: -$hover-zoom;
+		}
+	}
+}
+
+//
+// @inline-icon mixin!
+//
+@mixin inline-icon($icon-path, $position: abs, $location: left) {
+	$width: image-width("#{$icon-path}");
+	$height: image-height("#{$icon-path}");
+	background-image: inline-image("#{$icon-path}");
+	width: $width;
+	height: $height;
+
+	@if $position == abs {
+		position: absolute;
+		top: 50%;
+		margin-top: - ($height / 2);
+
+		@if $location == left {
+			left: 0;
+		}
+
+		@if $location == right {
+			right: 0;
+		}
+
+		@if $location == center {
+			left: 50%;
+			margin-left: - ($width / 2);
+		}
+	}
+
+	@if $position == static {
+		position: static;
+	}
 }
