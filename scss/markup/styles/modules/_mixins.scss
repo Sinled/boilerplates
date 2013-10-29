@@ -176,10 +176,10 @@
 //
 // @inline-icon mixin!
 //
-@mixin inline-icon($icon-path, $position: abs, $location: left) {
-	$width: image-width("#{$icon-path}");
-	$height: image-height("#{$icon-path}");
-	background-image: inline-image("#{$icon-path}");
+@mixin inline-icon($icon-path-name, $position: abs, $location: left, $retina: false, $type: ".png") {
+	$width: image-width("#{$icon-path-name}#{$type}");
+	$height: image-height("#{$icon-path-name}#{$type}");
+	background-image: inline-image("#{$icon-path-name}#{$type}");
 	width: $width;
 	height: $height;
 
@@ -204,5 +204,12 @@
 
 	@if $position == static {
 		position: static;
+	}
+
+	@if $retina == retina {
+		@include retina {
+			background-image: inline-image("#{$icon-path-name}@2x#{$type}");
+			background-size: 100% 100%;
+		}
 	}
 }
