@@ -1,0 +1,20 @@
+
+@mixin svg-icon($name) {
+	$svg-folder-name: "svg" !default;
+	$image-name: $name;
+
+  width: image-width("#{$svg-folder-name}/#{$image-name}.png");
+  height: image-height("#{$svg-folder-name}/#{$image-name}.png");
+
+  background: inline-image("#{$svg-folder-name}/#{$image-name}.svg");
+  background-size: 100% 100%;
+
+	.no-svg & {
+	  background: image-url("#{$svg-folder-name}/#{$image-name}.png");
+	}
+}
+
+%ms-logo-orange1 {
+	@extend .icon;
+	@include svg-icon("ms-logo-orange1");
+}
