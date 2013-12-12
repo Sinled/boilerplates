@@ -5,17 +5,23 @@
 
 in virtualenv run 
 
-		./init.sh
+```
+./init.sh
+```
 
 
 ## local server
 
 run local server available form lan
 
-		./local-server.sh
+```
+./local-server.sh
+```
 
 to acces markup pages, in adres panel (for example):
 
-		http://127.0.0.1:8005/markup/inner
+```
+http://127.0.0.1:8005/markup/inner
+```
 
 
