@@ -1,0 +1,46 @@
+// compass settings
+// legacy support
+$legacy-support-for-ie: false;
+$legacy-support-for-ie8: false;
+$legacy-support-for-mozilla: false;
+$experimental-support-for-opera: false;
+
+
+// vendor prefixes
+$support-for-original-webkit-gradients: false;
+$experimental-support-for-khtml: false;
+
+
+// global variables
+
+$base-color: #222;
+$base-inverse-color: #fff;
+$base-accent-color: #ff5f37;
+$base-background: #fff;
+$base-link-color: #000;
+$base-link-hover-color: #000;
+$base-link-active-color: #000;
+$base-link-visited-color: #800080;
+$base-link-focus-color: #ff0000;
+
+
+$default-transition-property: all;
+$default-transition-duration: 1s;
+$default-transition-function: ease;
+$default-transition-delay: false;
+
+$base-font-size: 16px;
+$base-line-height-multiplier: 1.34;
+$base-font: #{$base-font-size}/#{$base-line-height-multiplier} Arial, Helvetica, sans-serif;
+
+// content
+$content-maw: 1198px;
+$responsive-side-padding: 25px;
+
+
+// responsive br-points
+$bp-desktop-start: "min-width: 960px";
+$bp-tablet-medium-start: "min-width: 768px";
+	// iphone 5+ landskape layout
+$bp-tablet-start: "min-width: 569px";
+$bp-mobile-end: "max-width: 568px";

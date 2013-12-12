@@ -1,0 +1,48 @@
+/*
+# Default button example
+Used for Clicking 
+
+```
+<button class="btn">Button</button>
+<button class="btn :hover">Hover me</button>
+<button class="btn :active">Click me</button>
+<button class="btn :focus">Focus me</button>
+```
+*/
+
+.btn {
+	$btn-color: #fff;
+	$btn-outline: #000;
+	$btn-bg: #287aee;
+	@extend %button;
+	border-color: $btn-outline;
+	border-radius: 5px;
+	background-color: $btn-bg;
+	color: $btn-color;
+	text-shadow: 0 1px 1px $btn-outline;
+
+	&:hover,
+	&:focus {
+		box-shadow: inset 0 0 1px 1px $btn-outline;
+	}
+
+	&:active {
+		box-shadow: inset 0 0 1px 3px $btn-outline;
+	}
+}
+
+/* # Alternative button
+```
+<button class="btn-2">Alternative button</button>
+```
+*/
+
+.btn-2 {
+	@extend %button;
+	color: #fff;
+	background: green;
+	height: 30px;
+	line-height: 30px;
+	min-width: 200px;
+	text-align: center;
+}

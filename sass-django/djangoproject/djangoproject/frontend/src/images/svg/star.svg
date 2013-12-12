@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <circle id="Oval-1" stroke="#D0011B" stroke-width="2" sketch:type="MSShapeGroup" cx="26" cy="26" r="25"></circle>
+        <polygon id="Star-1" stroke="#303BA3" fill="#D0011B" sketch:type="MSShapeGroup" points="25.9999996 36 14.2442959 42.1803406 16.489435 29.0901703 6.97886953 19.8196606 20.1221494 17.9098287 26.0000002 6 31.8778547 17.9098316 45.0211336 19.8196701 35.5105642 29.0901728 37.7557037 42.1803408 "></polygon>
+    </g>
+</svg>
