@@ -2,6 +2,7 @@
 
 
 ## Init project
+install pip packages and frontend modules
 
 in virtualenv run 
 
