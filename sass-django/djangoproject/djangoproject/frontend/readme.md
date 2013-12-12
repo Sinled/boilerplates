@@ -1,7 +1,6 @@
 # requirements for frontend
 
 
-
 ## node.js
 
 ```
@@ -62,3 +61,11 @@ grunt server
 ## Usage 
 
 content of ``assets`` folder will be moved to the static directory without any changes
+
+
+# documentation
+
+generate frontend documentation in ``/frontend`` run
+```
+grunt docs
+```
