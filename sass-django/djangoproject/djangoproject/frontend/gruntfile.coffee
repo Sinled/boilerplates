@@ -16,7 +16,7 @@ module.exports = (grunt) ->
     assests: "assests"
     templ: "templates"
     dist: "../static"
-    docs: "../docs"
+    docs: "../templates/frontend-docs"
 
   grunt.initConfig
     yeoman: yeomanConfig
@@ -303,7 +303,7 @@ module.exports = (grunt) ->
           #   ]
 
         files:
-          "<%= yeoman.docs %>/sass": "<%= yeoman.app %>/styles/**/*.{scss,sass}"
+          "<%= yeoman.docs %>/docs": "<%= yeoman.app %>/styles/**/*.{scss,sass}"
 
 
   # grunt tacks
