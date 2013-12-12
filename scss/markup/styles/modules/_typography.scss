@@ -1,7 +1,16 @@
 %main-title {
+	@extend %condensed-title;
 
+	a {
+		color: inherit;
+
+		&:hover {
+			color: inherit;
+		}
+	}
 }
 
 %sub-title {
-
+	@extend %main-title;
 }
+

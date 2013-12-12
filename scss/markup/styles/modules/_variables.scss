@@ -33,4 +33,14 @@ $base-font-size: 16px;
 $base-line-height-multiplier: 1.34;
 $base-font: #{$base-font-size}/#{$base-line-height-multiplier} Arial, Helvetica, sans-serif;
 
+// content
+$content-maw: 1198px;
+$responsive-side-padding: 25px;
 
+
+// responsive br-points
+$bp-desktop-start: "min-width: 960px";
+$bp-tablet-medium-start: "min-width: 768px";
+	// iphone 5+ landskape layout
+$bp-tablet-start: "min-width: 569px";
+$bp-mobile-end: "max-width: 568px";

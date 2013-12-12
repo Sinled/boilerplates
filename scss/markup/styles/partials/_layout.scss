@@ -1,4 +1,17 @@
 body {
 	background: #f00;
-	color: #fff;
+}
+
+.page {
+	position: relative;
+	overflow: hidden;
+}
+
+.content-holder {
+	@extend %clearfix;
+	box-sizing: border-box;
+	max-width: $content-maw;
+	margin: 0 auto;
+	padding: 0 $responsive-side-padding;
+	position: relative;
 }

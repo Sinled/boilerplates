@@ -24,21 +24,30 @@
 	}
 }
 
-%button {
+%button-reset {
 	@include inline-block(middle);
 	@include box-sizing(content-box);
+	outline: none;
+	border: none;
 	position: relative;
-	overflow: visible;
-	margin: 0;
-	padding: 11px 10px 10px;
-	height: 18px;
-	border: 1px solid #ccc;
 	background: none;
+	overflow: visible;
+	padding: 0;
+	margin: 0;
 	color: $base-color;
 	cursor: pointer;
 	text-align: center;
 	text-decoration: none;
 }
+
+
+%button {
+	@extend %button-reset;
+	padding: 11px 10px 10px;
+	height: 18px;
+	border: 1px solid #ccc;
+}
+
 
 %input-text {
 	overflow: hidden;
@@ -65,6 +74,12 @@
 	height: 100%;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
+}
+
+%flex-image {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 // @include responsive($breakpoint, screen)

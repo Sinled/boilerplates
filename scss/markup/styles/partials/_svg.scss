@@ -14,7 +14,11 @@
 	}
 }
 
-%ms-logo-orange1 {
+%star {
 	@extend .icon;
-	@include svg-icon("ms-logo-orange1");
+	@include svg-icon("star");
+}
+
+.star {
+	@extend %star;
 }
