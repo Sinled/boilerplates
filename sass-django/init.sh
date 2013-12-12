@@ -9,8 +9,13 @@ echo '=============================================='
 echo 'Installing node packages'
 echo '=============================================='
 
-
 npm install
+
+echo '=============================================='
+echo 'Installing bower packages'
+echo '=============================================='
+
+bower install
 
 echo '=============================================='
 echo 'Building application with grunt'
