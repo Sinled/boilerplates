@@ -1,3 +1,10 @@
+# Table of contents
+
+1. [requirements for frontend](#requirements-for-frontend)
+1. [installation](#installation)
+1. [build frontend](#build-frontend)
+1. [documentation](#documentation)
+
 # requirements for frontend
 
 
@@ -66,6 +73,12 @@ content of ``assets`` folder will be moved to the static directory without any c
 # documentation
 
 generate frontend documentation in ``/frontend`` run
+
 ```
 grunt docs
 ```
+
+documentation links ``http://127.0.0.1:8000/frontend-docs/docs/modules-mixins.html``
+
+markup templates ``http://127.0.0.1:8000/layouts/index.html``
+
