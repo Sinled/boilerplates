@@ -1,4 +1,23 @@
-// custom font face mixin - fix ie9-10
+// # @svg-icon - Svg icon mixin
+//		@include svg-icon($name);
+@mixin svg-icon($name) {
+	$svg-folder-name: "svg" !default;
+	$image-name: $name;
+
+  width: image-width("#{$svg-folder-name}/#{$image-name}.png");
+  height: image-height("#{$svg-folder-name}/#{$image-name}.png");
+
+  background: inline-image("#{$svg-folder-name}/#{$image-name}.svg");
+  background-size: 100% 100%;
+
+	.no-svg & {
+	  background: image-url("#{$svg-folder-name}/#{$image-name}.png");
+	}
+}
+
+
+// # @my-font-face - custom font face mixin - fix ie9-10
+//		@include my-font-face($name, $font-files, [$eot, $weight, $style]);
 @mixin my-font-face($name, $font-files, $eot: false, $weight: false, $style: false) {
 	$iefont: unquote("#{$eot}?#iefix");
 	@font-face {
@@ -12,86 +31,19 @@
 		@if $style {
 			font-style: $style; } } }
 
-%clearfix {
-	@if $legacy-support-for-ie {
-		*zoom: 1;
-	}
-	
-	&:after {
-		content: '';
-		display:table;
-		clear: both;
-	}
-}
 
-%button-reset {
-	@include inline-block(middle);
-	@include box-sizing(content-box);
-	outline: none;
-	border: none;
-	position: relative;
-	background: none;
-	overflow: visible;
-	padding: 0;
-	margin: 0;
-	color: $base-color;
-	cursor: pointer;
-	text-align: center;
-	text-decoration: none;
-}
-
-
-%button {
-	@extend %button-reset;
-	padding: 11px 10px 10px;
-	height: 18px;
-	border: 1px solid #ccc;
-}
-
-
-%input-text {
-	overflow: hidden;
-
-	input[type="text"] {	
-		margin: 0;
-		padding: 5px;
-		background: none;
-		border: none;
-		width: 100%;
-		display: block;
-		outline: none;
-		@include box-sizing(border-box);
-	}
-}
-
-%fixed-bg {
-	@include hide-text(left);
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	margin: 0;
-	width: 100%;
-	height: 100%;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-}
-
-%flex-image {
-	display: block;
-	width: 100%;
-	height: auto;
-}
-
-// @include responsive($breakpoint, screen)
-// (using "screen" as an example)
+// # @responsive mixin
+//		@include responsive($breakpoint, [$media]);
 @mixin responsive($breakpoint, $media: all) {
 	@media only #{$media} and ($breakpoint) {
 		@content;
 	}
 }
 
+// # @hidpi devices mixin
 // hidpi: same concept as "responsive", except that this is focusing on
 // HiDPI (a.k.a. retina) displays.
+//		@include hidpi([$media]);
 @mixin hidpi($media: all) {
 	@media 
 		only #{$media} and (min--moz-device-pixel-ratio: 1.5),
@@ -104,15 +56,16 @@
 	}
 }
 
+// # @retina mixin
 // and just because the term "retina" is so widely used, we'll create
 // a mixin that uses that as an alias
+//		@include retina([$media]);
 @mixin retina($media: all) {
 	@include hidpi($media) { @content; }
 }
 
-// 
-// set-zindex
-//
+// # @set-zindex mixin
+//		@include set-zindex($elem-name, [$direction, $startvalue]);
 @mixin set-zindex($elem-name, $counter, $direction: "ascending", $startvalue: 0) {
 	$i: 0;
 	$s: $startvalue;
@@ -135,9 +88,8 @@
 	}
 }
 
-// 
-// placeholder mixin
-//
+// # @placeholder mixin
+//		@include placeholder($params);
 @mixin placeholder($params) {
 	&::-webkit-input-placeholder {
 		 color: $params;
@@ -160,8 +112,8 @@
 	}
 }
 
-// zoom image mixin
-
+// # @zoom-box - zoom image mixin
+//		@include zoom-box([$box-name, $img-w, $img-h, $hover-zoom]);
 @mixin zoom-box($box-name: "visual-block", $img-w: 300px, $img-h: 250px, $hover-zoom: 20px) {
 	.#{$box-name} {
 		img {
@@ -188,9 +140,8 @@
 	}
 }
 
-//
-// @inline-icon mixin!
-//
+// # @inline-icon mixin!
+//		@include inline-icon($icon-path-name, [$position, $location, $retina, $type])
 @mixin inline-icon($icon-path-name, $position: abs, $location: left, $retina: false, $type: ".png") {
 	$width: image-width("#{$icon-path-name}#{$type}");
 	$height: image-height("#{$icon-path-name}#{$type}");
