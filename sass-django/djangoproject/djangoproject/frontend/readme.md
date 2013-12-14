@@ -78,7 +78,7 @@ generate frontend documentation in ``/frontend`` run
 grunt docs
 ```
 
-documentation links ``/frontend-docs/docs/modules-mixins.html``
+documentation links ``/frontend-docs/docs/index.html``
 
 markup templates ``/markup/index.html``
 
