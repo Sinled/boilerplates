@@ -310,7 +310,7 @@ module.exports = (grunt) ->
 
   # $ grunt server
   grunt.registerTask "server", [
-    "clean"
+    "clean:dist"
     "concurrent:server"
     "concat:server"
     "autoprefixer"
@@ -320,7 +320,7 @@ module.exports = (grunt) ->
 
   # $ grunt build
   grunt.registerTask "build", [
-    "clean"
+    "clean:dist"
     "concurrent:dist"
     "uglify:dist"
     "autoprefixer"
