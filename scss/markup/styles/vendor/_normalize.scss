@@ -1,17 +1,13 @@
-// =============================================================================
-// Normalize.scss based on Nicolas Gallagher and Jonathan Neal's
-// normalize.css v2.1.1 | MIT License | git.io/normalize
-// =============================================================================
+// # Normalize.scss based on Nicolas Gallagher and Jonathan Neal's
+// normalize.css v2.1.1 | MIT License | [git.io/normalize](http://git.io/normalize)
 
-// =============================================================================
-// Normalize.scss settings
-// =============================================================================
-
+// # Normalize.scss settings
 
 // Set to true if you want to add support for IE6 and IE7
 // Notice: setting to true might render some elements
 // slightly differently than when set to false
 $legacy_support_for_ie: false !default; // Used also in Compass
+$legacy_support_for_ie8: false !default; // Used also in Compass
 
 
 // Set the default font family here so you don't have to override it later
@@ -37,9 +33,7 @@ $h6_margin: 2.33em 0 !default;
 $base-background: #fff !default;
 $color: #000 !default;
 
-// =============================================================================
-// HTML5 display definitions
-// =============================================================================
+// # HTML5 display definitions
 
 // Corrects block display not defined in IE6/7/8/9 & FF3
 
@@ -84,14 +78,10 @@ audio:not([controls]) {
 	display: none;
 }
 
-// =============================================================================
-// Base
-// =============================================================================
+// # Base
 
-// 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
-//    http://clagnut.com/blog/348/#c790
-// 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
-//    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+// 1. [Corrects text resizing oddly in IE6/7 when body font-size is set using em units](http://clagnut.com/blog/348/#c790)
+// 2. [Prevents iOS text size adjust after orientation change, without disabling user zoom](www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/)
 
 html {
 	@if $legacy_support_for_ie {
@@ -120,18 +110,16 @@ body {
 	margin: 0;
 }
 
-// =============================================================================
-// Links
-// =============================================================================
+// # Links
 
 // 1. Addresses outline displayed oddly in Chrome
-// 2. Improves readability when focused and also mouse hovered in all browsers
-//    people.opera.com/patrickl/experiments/keyboard/test
-// 3. ie10 active bg
+// 2. [Improves readability when focused and also mouse hovered in all browsers](people.opera.com/patrickl/experiments/keyboard/test)
+// 3. Remove the gray background color from active links in IE 10.
 
 a {
 	text-decoration: underline;
 	color: $base-link-color;
+	background: transparent; // 3
 
 	// 1
 
@@ -147,9 +135,7 @@ a {
 	}
 }
 
-// =============================================================================
-// Typography
-// =============================================================================
+// # Typography
 
 // Addresses font sizes and margins set differently in IE6/7
 // Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
@@ -226,8 +212,7 @@ mark {
 	}
 }
 
-// Corrects font family set oddly in IE6, S4/5, Chrome
-// en.wikipedia.org/wiki/User:Davidgothberg/Test59
+// [Corrects font family set oddly in IE6, S4/5, Chrome](en.wikipedia.org/wiki/User:Davidgothberg/Test59)
 
 code,
 kbd,
@@ -296,9 +281,7 @@ sub {
 	bottom: -0.25em;
 }
 
-// =============================================================================
-// Lists
-// =============================================================================
+// # Lists
 
 // Addresses margins set differently in IE6/7
 @if $legacy_support_for_ie {
@@ -336,13 +319,11 @@ nav {
 	}
 }
 
-// =============================================================================
-// Embedded content
-// =============================================================================
+// # Embedded content
 
 // 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
-// 2. Improves image quality when scaled in IE7
-//    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+// 2. [Improves image quality when scaled in IE7](code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/)
+//    
 
 img {
 	border: 0; // 1
@@ -357,9 +338,7 @@ svg:not(:root) {
 	overflow: hidden;
 }
 
-// =============================================================================
-// Figures
-// =============================================================================
+// # Figures
 
 // Addresses margin not present in IE6/7/8/9, S5, O11
 
@@ -367,9 +346,7 @@ figure {
 	margin: 0;
 }
 
-// =============================================================================
-// Forms
-// =============================================================================
+// # Forms
 
 // Corrects margin displayed oddly in IE6/7
 @if $legacy_support_for_ie {
@@ -494,8 +471,7 @@ input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
 
-// Removes inner padding and border in FF3+
-// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+// [Removes inner padding and border in FF3+](www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/)
 
 button, input {
 	&::-moz-focus-inner {
@@ -512,9 +488,7 @@ textarea {
 	vertical-align: top; // 2
 }
 
-// =============================================================================
-// Tables
-// =============================================================================
+// # Tables
 
 // Remove most spacing between table cells
 
@@ -524,9 +498,7 @@ table {
 }
 
 
-// =============================================================================
-// Additions
-// =============================================================================
+// # Additions
 
 body {
  color: $base-color;
@@ -544,9 +516,7 @@ input[type="image"] {
  border-radius: 0;
 }
 
-// =============================================================================
-// vertical rythm
-// =============================================================================
+// # vertical rythm
 
 @if $normalize_vertical_rythm {
  h1, h2, h3, h4, h5, h6, hgroup,
