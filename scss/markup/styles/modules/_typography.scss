@@ -30,8 +30,7 @@
 ```
 
 */
-
-%main-title {
+%title {
 	a {
 		color: inherit;
 
@@ -41,7 +40,11 @@
 	}
 }
 
+%main-title {
+	@extend %title;
+}
+
 %sub-title {
-	@extend %main-title;
+	@extend %title;
 }
 

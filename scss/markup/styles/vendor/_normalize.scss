@@ -524,6 +524,6 @@ input[type="image"] {
  p, figure,
  pre, table, fieldset, hr {
 	margin-top: 0;
-	margin-bottom: $base-font-size * $base-line-height-multiplier;
+	margin-bottom: $vertycal-rythm-offset;
  }
 }
