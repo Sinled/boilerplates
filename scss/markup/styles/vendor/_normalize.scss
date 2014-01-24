@@ -519,11 +519,11 @@ input[type="image"] {
 // # vertical rythm
 
 @if $normalize_vertical_rythm {
- h1, h2, h3, h4, h5, h6, hgroup,
- ul, ol, dd,
- p, figure,
- pre, table, fieldset, hr {
-	margin-top: 0;
-	margin-bottom: $vertycal-rythm-offset;
- }
+	h1, h2, h3, h4, h5, h6, hgroup,
+	dl, ul, ol, dd,
+	p, figure,
+	pre, table, fieldset, hr {
+		margin-top: 0;
+		margin-bottom: $vertycal-rythm-offset;
+	}
 }
