@@ -45,7 +45,14 @@
 %input-text {
 	overflow: hidden;
 
+	input[type="search"],
+	input[type="number"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="tel"],
 	input[type="text"] {
+		@include box-sizing(border-box);
 		margin: 0;
 		padding: 5px;
 		background: none;
@@ -53,7 +60,6 @@
 		width: 100%;
 		display: block;
 		outline: none;
-		@include box-sizing(border-box);
 	}
 }
 
