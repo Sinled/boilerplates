@@ -15,6 +15,7 @@ $normalized_font_family: sans-serif !default;
 
 $normalize_headings: true !default;
 $normalize_vertical_rythm: true !default;
+$vertycal-rythm-offset: 24px !default;
 
 $h1_font_size: 2em !default;
 $h2_font_size: 1.5em !default;
@@ -323,7 +324,7 @@ nav {
 
 // 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
 // 2. [Improves image quality when scaled in IE7](code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/)
-//    
+//
 
 img {
 	border: 0; // 1
