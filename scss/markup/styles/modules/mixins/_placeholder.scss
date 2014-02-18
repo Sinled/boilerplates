@@ -1,0 +1,11 @@
+// # @placeholder mixin
+//	 @include placeholder($params);
+@mixin placeholder($params, $hideOnFocus: false, $duration: 0.5s) {
+	&::placeholder {
+		color: $params;
+
+		@if $hideOnFocus {
+			transition: opacity $duration $duration ease;
+		}
+	}
+}

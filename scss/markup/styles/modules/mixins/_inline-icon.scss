@@ -1,0 +1,39 @@
+// # @inline-icon mixin!
+//	 @include inline-icon($icon-path-name, [$position, $location, $retina, $type])
+@mixin inline-icon($icon-path-name, $position: abs, $location: left, $retina: false, $type: ".png") {
+	$width: image-width("#{$icon-path-name}#{$type}");
+	$height: image-height("#{$icon-path-name}#{$type}");
+	background-image: inline-image("#{$icon-path-name}#{$type}");
+	width: $width;
+	height: $height;
+
+	@if $position == abs {
+		position: absolute;
+		top: 50%;
+		margin-top: - ($height / 2);
+
+		@if $location == left {
+			left: 0;
+		}
+
+		@if $location == right {
+			right: 0;
+		}
+
+		@if $location == center {
+			left: 50%;
+			margin-left: - ($width / 2);
+		}
+	}
+
+	@if $position == static {
+		position: static;
+	}
+
+	@if $retina == retina {
+		@include retina {
+			background-image: inline-image("#{$icon-path-name}@2x#{$type}");
+			background-size: 100% 100%;
+		}
+	}
+}

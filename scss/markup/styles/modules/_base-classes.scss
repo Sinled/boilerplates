@@ -5,7 +5,7 @@
 	@if $legacy-support-for-ie {
 		*zoom: 1;
 	}
-	
+
 	&:after {
 		content: '';
 		display:table;
@@ -14,7 +14,7 @@
 }
 
 // # %button-reset - button reset base class
-//		@extend %button-reset;
+//	 @extend %button-reset;
 %button-reset {
 	@include inline-block(middle);
 	@include box-sizing(content-box);
@@ -32,7 +32,7 @@
 }
 
 // # %button - button base class
-//		@extend %button;
+//	 @extend %button;
 %button {
 	@extend %button-reset;
 	padding: 11px 10px 10px;
@@ -41,11 +41,11 @@
 }
 
 // # %input-text - input reset base class
-//		@extend %input-text;
+//	 @extend %input-text;
 %input-text {
 	overflow: hidden;
 
-	input[type="text"] {	
+	input[type="text"] {
 		margin: 0;
 		padding: 5px;
 		background: none;
@@ -58,7 +58,7 @@
 }
 
 // # %fixed-bg - input reset base class
-//		@extend %fixed-bg;
+//	 @extend %fixed-bg;
 %fixed-bg {
 	@include hide-text(left);
 	position: absolute;
@@ -72,9 +72,18 @@
 }
 
 // # %flex-image - Flexible image base class
-//		@extend %flex-image;
+//	 @extend %flex-image;
 %flex-image {
 	display: block;
-	width: 100%;
 	height: auto;
+}
+
+// # %flex-image-container - Flexible container with image base class
+//	 @extend %flex-image;
+%flex-image-container {
+	> img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
 }
