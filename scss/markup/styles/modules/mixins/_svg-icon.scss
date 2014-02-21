@@ -1,16 +1,18 @@
 // # @svg-icon - Svg icon mixin
 //	 @include svg-icon($name);
-@mixin svg-icon($name) {
+@mixin svg-icon($name, $fallback: true) {
 	$svg-folder-name: "svg" !default;
 	$image-name: $name;
 
-  width: image-width("#{$svg-folder-name}/#{$image-name}.png");
-  height: image-height("#{$svg-folder-name}/#{$image-name}.png");
+	background: inline-image("#{$svg-folder-name}/#{$image-name}.svg") 50% 50% no-repeat;
+	background-size: auto 100%;
 
-  background: inline-image("#{$svg-folder-name}/#{$image-name}.svg") 50% 50% no-repeat;
-  background-size: auto 100%;
+	@if $fallback {
+		width: image-width("#{$svg-folder-name}/#{$image-name}.png");
+		height: image-height("#{$svg-folder-name}/#{$image-name}.png");
 
-	.no-svg & {
-	  background: image-url("#{$svg-folder-name}/#{$image-name}.png");
+		.no-svg & {
+			background: image-url("#{$svg-folder-name}/#{$image-name}.png");
+		}
 	}
 }
