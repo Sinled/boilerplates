@@ -16,20 +16,20 @@
 
 		<!-- ie6-8 html5 shim -->
 		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	</head>
 	<body>
 		<noscript style="position:fixed;z-index:9999;top:15%;left:0;width:200px;padding:30px;background: #5A7F51;color:#fff;font-size:20px;line-height:22px;overflow:hidden;text-align:center;opacity:.83;pointer-events:none">For full functionality of this site it is necessary to enable <b style="color:#000;">JavaScript</b></noscript>
-	
+
 		<div class="page">
 			{% block content%}
-			
+
 			{% endblock%}
 		</div>
 
 		<!-- Cdn jquery load -->
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript">
 			window.jQuery || document.write('<script type="text/javascript" src="{% static "scripts/jquery.min.js" %}"><\/script>');
 		</script>
