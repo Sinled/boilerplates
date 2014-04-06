@@ -17,7 +17,7 @@
 //	 @extend %button-reset;
 %button-reset {
 	@include inline-block(middle);
-	@include box-sizing(content-box);
+	box-sizing: content-box;
 	outline: none;
 	border: none;
 	position: relative;
@@ -35,9 +35,6 @@
 //	 @extend %button;
 %button {
 	@extend %button-reset;
-	padding: 11px 10px 10px;
-	height: 18px;
-	border: 1px solid #ccc;
 }
 
 // # %input-text - input reset base class
@@ -45,14 +42,8 @@
 %input-text {
 	overflow: hidden;
 
-	input[type="search"],
-	input[type="number"],
-	input[type="number"],
-	input[type="email"],
-	input[type="url"],
-	input[type="tel"],
-	input[type="text"] {
-		@include box-sizing(border-box);
+	@include text-inputs {
+		box-sizing: border-box;
 		margin: 0;
 		padding: 5px;
 		background: none;
@@ -60,6 +51,7 @@
 		width: 100%;
 		display: block;
 		outline: none;
+		color: $base-color;
 	}
 }
 
@@ -93,3 +85,98 @@
 		height: auto;
 	}
 }
+
+// # %opacity-panel - Style for opacity panel
+//	 @extend %opacity-panel;
+%opacity-panel {
+	background: rgba(#000, .75);
+}
+
+
+// # Removes bottom margin from last child in container
+//	 @extend %no-last-bmargin
+%no-last-bmargin {
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// # Removes bottom margin from last child in container
+//	 @extend %no-last-rmargin
+%no-last-rmargin {
+	> *:last-child {
+		margin-right: 0;
+	}
+}
+
+
+// # Save oferflowed text
+//	 @extend %overflowed-text
+%overflowed-text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// # Position element in middle of parent
+//	 @extend %v-centered
+%v-centered {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// # Position element in middle of parent
+//	 @extend %h-centered
+%h-centered {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+// # Position element in middle of parent
+//	 @extend %hv-centered
+%hv-centered {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// # Position element in middle of parent
+//	 @extend %hv-centered
+%parent-stretched {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+
+// # Stripped bg for even elements
+//	 @extend %hv-centered
+%stripped-bg-even {
+	&:nth-child(even) {
+		background: rgba(#000, .6);
+	}
+
+	@media screen and ($brpoint-tablet-start) and ($brpoint-tablet-end) {
+		&:nth-child(even) {
+			background: rgba(#000, .6);
+		}
+	}
+}
+
+// # Stripped bg for odd elements
+//	 @extend %hv-centered
+%stripped-bg-odd {
+	&:nth-child(odd) {
+		background: rgba(#000, .6);
+	}
+
+	@media screen and ($brpoint-tablet-start) and ($brpoint-tablet-end) {
+		&:nth-child(odd) {
+			background: rgba(#000, .6);
+		}
+	}
+}
+
