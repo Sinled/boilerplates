@@ -1,0 +1,31 @@
+@mixin arrow($bg, $size, $direction: top) {
+	&:before {
+		border: solid transparent;
+		content: ' ';
+		height: 0;
+		width: 0;
+		pointer-events: none;
+		border-color: rgba($bg, 0);
+		border-width: $size;
+
+		@if $direction == top {
+			border-bottom-color: $bg;
+			margin-left: -$size;
+		}
+
+		@if $direction == bottom {
+			border-top-color: $bg;
+			margin-left: -$size;
+		}
+
+		@if $direction == right {
+			border-left-color: $bg;
+			margin-top: -$size;
+		}
+
+		@if $direction == left {
+			border-right-color: $bg;
+			margin-top: -$size;
+		}
+	}
+}
