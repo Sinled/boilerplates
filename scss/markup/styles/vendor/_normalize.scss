@@ -517,6 +517,13 @@ input[type="image"] {
  border-radius: 0;
 }
 
+//  Remove clear cross in ie 10+
+input::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
 // # vertical rythm
 
 @if $normalize_vertical_rythm {
