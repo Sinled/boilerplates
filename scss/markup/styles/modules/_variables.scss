@@ -22,18 +22,22 @@ $mine-shaft: #222222;
 $outrageous-orange: #ff5f37;
 $fresh-eggplant: #800080;
 $science-blue: #0066cc;
+$night-rider: #0B0605;
 
 // ## colors:text
 
 $base-color: $mine-shaft;
 $base-inverse-color: $white;
 $base-accent-color: $outrageous-orange;
-$base-background: $white;
 $base-link-color: $black;
 $base-link-hover-color: $black;
 $base-link-active-color: $black;
 $base-link-visited-color: $fresh-eggplant;
 $base-link-focus-color: $red;
+
+// ## colors:backgrounds
+
+$base-background: $night-rider;
 
 // ## colors:selection
 
@@ -47,6 +51,22 @@ $default-transition-property: all;
 $default-transition-duration: 1s;
 $default-transition-function: ease;
 $default-transition-delay: false;
+
+
+// # z-index stack
+
+$z-index-lvl-0: 0;
+$z-index-lvl-1: 10;
+$z-index-lvl-2: 20;
+$z-index-lvl-3: 30;
+$z-index-lvl-4: 40;
+$z-index-lvl-5: 50;
+$z-index-lvl-6: 60;
+$z-index-lvl-7: 70;
+$z-index-lvl-8: 80;
+$z-index-lvl-9: 90;
+$z-index-lvl-10: 100;
+
 
 
 // # Fonts
@@ -81,3 +101,15 @@ $bp-mobile-end: "max-width: 568px";
 // # usability
 
 $click-additional-area-size: 10px;
+
+
+// # componentes
+
+// ## shared
+$base-padding: 10px;
+
+
+// ## box
+$box-width: 700px;
+$box-padding: $base-padding * 4;
+$box-top-offset: 230px;
