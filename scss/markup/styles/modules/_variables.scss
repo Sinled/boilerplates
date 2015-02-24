@@ -1,47 +1,83 @@
-// compass settings
-// legacy support
+// # compass
+// ## compass:legacy support
+
 $legacy-support-for-ie: false;
 $legacy-support-for-ie8: false;
 $legacy-support-for-mozilla: false;
 $experimental-support-for-opera: false;
 
+// ## compass:vendor prefixes
 
-// vendor prefixes
 $support-for-original-webkit-gradients: false;
 $experimental-support-for-khtml: false;
 
 
-// global variables
+// # colors
+// ## colors:palette
 
-$base-color: #222;
-$base-inverse-color: #fff;
-$base-accent-color: #ff5f37;
-$base-background: #fff;
-$base-link-color: #000;
-$base-link-hover-color: #000;
-$base-link-active-color: #000;
-$base-link-visited-color: #800080;
-$base-link-focus-color: #ff0000;
+$white: #ffffff;
+$black: #000000;
+$red: #ff0000;
+$mine-shaft: #222222;
+$outrageous-orange: #ff5f37;
+$fresh-eggplant: #800080;
+$science-blue: #0066cc;
 
+// ## colors:text
+
+$base-color: $mine-shaft;
+$base-inverse-color: $white;
+$base-accent-color: $outrageous-orange;
+$base-background: $white;
+$base-link-color: $black;
+$base-link-hover-color: $black;
+$base-link-active-color: $black;
+$base-link-visited-color: $fresh-eggplant;
+$base-link-focus-color: $red;
+
+// ## colors:selection
+
+$selection-bg: $science-blue;
+$selection-color: $white;
+
+
+// # Animations
 
 $default-transition-property: all;
 $default-transition-duration: 1s;
 $default-transition-function: ease;
 $default-transition-delay: false;
 
+
+// # Fonts
+
 $base-font-size: 16px;
 $vertycal-rythm-offset: 24px;
 $base-line-height-multiplier: $vertycal-rythm-offset / $base-font-size;
 $base-font: #{$base-font-size}/#{$base-line-height-multiplier} Arial, Helvetica, sans-serif;
 
-// content
+
+// # Content
+
 $content-maw: 1198px;
-$responsive-side-padding: 25px;
+$content-miw: 1000px;
 
 
-// responsive br-points
+// # break-points
+// #3 break-points:desktop
+
 $bp-desktop-start: "min-width: 960px";
+
+// ## break-points:tablet
+
 $bp-tablet-medium-start: "min-width: 768px";
-	// iphone 5+ landskape layout
 $bp-tablet-start: "min-width: 569px";
+
+// ## break-points:mobile
+
 $bp-mobile-end: "max-width: 568px";
+
+
+// # usability
+
+$click-additional-area-size: 10px;
