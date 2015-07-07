@@ -1,8 +1,0 @@
-{
-  "name": "frontend",
-  "version": "0.0.0",
-  "dependencies": {
-    "jquery": "=1.10.2"
-  }
-}
-

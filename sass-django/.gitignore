@@ -1,7 +1,0 @@
-input-files
-local_settings.py
-tmp
-.DS_Store
-static
-*.pyc
-*.map

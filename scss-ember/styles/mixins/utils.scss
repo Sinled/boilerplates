@@ -1,0 +1,234 @@
+@mixin clearfix() {
+  &:after {
+    content:'';
+    display: table;
+    clear: both;
+  }
+}
+
+//noinspection CssOptimizeSimilarProperties
+@mixin arrow($bg, $size, $direction: top) {
+  // Some hacks with borders
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  border-color: rgba($bg, 0);
+  border-width: $size;
+
+  @if $direction == top {
+    border-bottom-color: $bg;
+    margin-left: - $size;
+  }
+
+  @if $direction == bottom {
+    border-top-color: $bg;
+    margin-left: - $size;
+  }
+
+  @if $direction == right {
+    border-left-color: $bg;
+    margin-top: - $size;
+  }
+
+  @if $direction == left {
+    border-right-color: $bg;
+    margin-top: - $size;
+  }
+}
+
+
+//noinspection CssInvalidPseudoSelector
+@mixin placeholder($params, $hideOnFocus: false, $duration: 0.5s) {
+  &::placeholder {
+    color: $params;
+  }
+
+  @if $hideOnFocus {
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+        transition: opacity $duration $duration ease;
+      }
+    }
+  }
+}
+
+
+@mixin inline-block($position: middle) {
+  vertical-align: $position;
+  display: inline-block;
+}
+
+
+@mixin button-reset() {
+  @include inline-block(middle);
+  box-sizing: content-box;
+  outline: none;
+  border: none;
+  position: relative;
+  background: none;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+  color: $base-color;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+@mixin button() {
+  @include button-reset()
+}
+
+
+@mixin text-input-defaults() {
+  box-sizing: border-box;
+  margin: 0;
+  padding: .5rem;
+  background: none;
+  border: none;
+  width: 100%;
+  display: block;
+  outline: none;
+  color: $base-color;
+}
+
+
+@mixin input-text() {
+  overflow: hidden;
+
+  input {
+    @include text-input-defaults()
+  }
+
+  textarea {
+    width: 100% !important;
+    min-width: 100% !important;
+    min-height: 12rem;
+  }
+}
+
+
+@mixin flex-image() {
+  display: block;
+  height: auto;
+}
+
+
+@mixin flex-image-container() {
+  > img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@mixin opacity-panel($color: $black, $opacity: .75) {
+  background: rgba($color, $opacity);
+}
+
+
+@mixin muted-element($opacity: .4) {
+  opacity: $opacity;
+}
+
+
+@mixin no-last-margin($position: bottom) {
+  > *:last-child {
+    margin-#{$position}: 0;
+  }
+}
+
+@mixin centered($position: center, $additional-transforms: false) {
+  position: absolute;
+
+  @if $position == center {
+    left: 50%;
+    top: 50%;
+
+    @if $additional-transforms {
+      transform: translate(-50%, -50%) $additional-transforms;
+    } @else {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @if $position == vertical {
+    top: 50%;
+
+    @if $additional-transforms {
+      transform: translateY(-50%) $additional-transforms;
+    } @else {
+      transform: translateY(-50%);
+    }
+
+    @if $position == horizontal {
+      left: 50%;
+
+      @if $additional-transforms {
+        transform: translateX(-50%) $additional-transforms;
+      } @else {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+
+@mixin parent-stretched($t: 0, $r: 0, $b: 0, $l: 0) {
+  position: absolute;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+}
+
+
+@mixin increase-clickable-area($click-additional-area-size: 1rem) {
+  content: '';
+  position: absolute;
+  left: - $click-additional-area-size;
+  right: - $click-additional-area-size;
+  bottom: - $click-additional-area-size;
+  top: - $click-additional-area-size;
+}
+
+
+@mixin rectangle-block-base() {
+  content: '';
+  display: block;
+}
+
+
+@mixin rectangle-block($ratio: 1) {
+  @include rectangle-block-base();
+  padding-top: $ratio * 100%;
+}
+
+
+@mixin empty-hidden() {
+  &:empty {
+    display:none
+  }
+}
+
+
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+@mixin cropped-text($display: false) {
+  @include ellipsis();
+  white-space: nowrap;
+
+  @if $display {
+    display: $display;
+  }
+}
+

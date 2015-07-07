@@ -1,0 +1,108 @@
+
+
+// # colors
+
+
+// ## colors:base;
+
+$c-white: #fff;
+$c-gray: #818181;
+$c-black: #000;
+$c-red: #f00;
+
+
+// ## colors:main-palette;
+
+$c-amaranth: #f12943;
+$c-athens-gray: #f6f6f8;
+$c-silver: #c9c9c9;
+$c-nobel: #b3b3b3;
+$c-mercury: #e5e4e3;
+$c-wild-sand: #F6F6F6;
+$c-cod-gray: #1e1e1e;
+
+
+// ## colors:additional-palette;
+
+$c-fresh-eggplant: #800080;
+$c-science-blue: #06c;
+
+
+// ## colors:text;
+
+$base-color: $c-cod-gray;
+$base-inverse-color: $c-athens-gray;
+$base-accent-color: $c-amaranth;
+$base-mark-color: $c-silver;
+$base-link-color: $c-silver;
+$base-link-hover-color: $c-athens-gray;
+$base-link-active-color: $c-nobel;
+$base-link-visited-color: $c-fresh-eggplant;
+$base-link-focus-color: $c-red;
+
+
+// ## colors:backgrounds;
+
+$base-background: $c-mercury;
+$second-background: $c-white;
+
+
+// ## colors:selection;
+
+$selection-bg: $c-science-blue;
+$selection-color: $c-athens-gray;
+$main-title-color: $c-silver;
+
+
+
+// ## base margins and paddings
+$base-padding: 1rem;
+
+
+
+// # Animations
+
+$t-default-transition-property: all;
+$t-default-transition-duration: .4s;
+$t-default-transition-function: ease;
+$t-default-transition-delay: false;
+
+
+
+// # z-index stack
+
+$z-index-lvl-0: 0;
+$z-index-lvl-1: 10;
+$z-index-lvl-2: 20;
+$z-index-lvl-3: 30;
+$z-index-lvl-4: 40;
+$z-index-lvl-5: 50;
+$z-index-lvl-6: 60;
+$z-index-lvl-7: 70;
+$z-index-lvl-8: 80;
+$z-index-lvl-9: 90;
+$z-index-lvl-10: 100;
+
+
+
+// # Fonts
+
+$f-base-font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$f-ubuntu-font-family: 'Ubuntu', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$f-base-font-size: 1.6rem;
+$f-base-line-height: 1.5;
+$f-vertycal-rhythm-offset: $f-base-font-size * $f-base-line-height;
+$f-base-font: #{$f-base-font-size}/#{$f-base-line-height} $f-ubuntu-font-family;
+
+
+
+// # Content
+
+$content-maw: 96rem;
+$content-miw: 96rem;
+$content-bg: $c-wild-sand;
+
+
+
+// # breakpoints
+$bp-tablet-medium-end: "max-width: 639px";

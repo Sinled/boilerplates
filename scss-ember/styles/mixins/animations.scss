@@ -1,0 +1,84 @@
+@keyframes ellipsisLoader {
+  from {
+    width: 0;
+    margin-right: 0;
+  }
+  to {
+    width: 22px;
+    margin-right: -22px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin a-ellipsis-play-animation {
+  animation: ellipsisLoader 2s steps(4) infinite;
+}
+
+@mixin a-fade-in-animation {
+  animation: fadeIn $t-default-transition-duration both;
+}
+
+
+
+@mixin t-animated-height {
+  transition: max-height $t-default-transition-duration $t-default-transition-function;
+}
+
+@mixin t-opacity-transform {
+  transition: opacity $t-default-transition-duration $t-default-transition-function,
+              transform $t-default-transition-duration $t-default-transition-function;
+}
+
+@mixin t-text-input-transition {
+  transition: color $t-default-transition-duration $t-default-transition-function,
+              box-shadow $t-default-transition-duration $t-default-transition-function,
+              background-color $t-default-transition-duration $t-default-transition-function;
+}
+
+@mixin t-underlined-link {
+  text-decoration: none !important;
+  text-decoration: none;
+  background: linear-gradient(to top, currentColor 1px, transparent 1px) 50% 100% no-repeat;
+  background-size: 0 100%;
+  transition: background-size $t-default-transition-duration * .5 $t-default-transition-function, color $t-default-transition-duration * .5 $t-default-transition-function;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-hovered {
+    text-decoration: none !important;
+    background-size: 100% 100%;
+  }
+}
+
+@mixin t-animated-link($main-color: $base-link-color,
+                     $hover-color: $base-link-hover-color,
+                     $active-color: $hover-color,
+                     $visited-color: $base-link-visited-color) {
+  transition: color $t-default-transition-duration $t-default-transition-function,
+              text-shadow $t-default-transition-duration $t-default-transition-function,
+              opacity $t-default-transition-duration $t-default-transition-function;
+
+  color: $main-color;
+
+  &:visited {
+    color: $visited-color;
+  }
+
+  &:focus,
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:active {
+    color: $active-color;
+  }
+}

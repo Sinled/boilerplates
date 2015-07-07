@@ -1,0 +1,38 @@
+// install main part of normalize via npm or bower
+
+@if $flag-use-normalize {
+  body {
+    color: $base-color;
+    font: $f-base-font;
+    background: $base-background;
+  }
+
+  textarea,
+  input,
+  input[type=text],
+  input[type=password],
+  input[type=file],
+  input[type="image"] {
+    border-radius: 0;
+  }
+
+  // #remove clear cross in ie
+  input::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+// # vertical rythm
+$f-vertycal-rhythm-offset: 24px !default;
+
+@if $normalize-vertical-rythm {
+  h1, h2, h3, h4, h5, h6, hgroup,
+  dl, ul, ol, dd,
+  p, figure,
+  pre, table, fieldset, hr {
+    margin-top: 0;
+    margin-bottom: $f-vertycal-rhythm-offset;
+  }
+}
